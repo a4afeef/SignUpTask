@@ -1,0 +1,70 @@
+﻿
+@model SignUpTask.Models.Account.User
+@{
+    ViewData["Title"] = "SignUp";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+<script src="~/js/SignUp.js"></script>
+
+
+<div class="container col-8 offset-2">
+    <form method="post" asp-action="SignUp">
+        <h1>Create SHAPE Account</h1>
+        <br />
+        <div class="form-group">
+            <div class="row">
+                <div class="col-6">
+                    <label asp-for="FirstName">First Name:</label>
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                    <input type="text" asp-for="FirstName" placeholder="First Name" class="form-control" autocomplete="off" />
+                </div>
+                <div class="col-6">
+                    <label asp-for="LastName">Last Name:</label>
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                    <input type="text" asp-for="LastName" placeholder="Last Name" class="form-control" autocomplete="off" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <label asp-for="Email">Email:</label>
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                    <input type="text" asp-for="Email" placeholder="username@emailprovider.com" class="form-control" autocomplete="off" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <label asp-for="Password">Password:</label>
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                    <input id="txtPassword" type="password" asp-for="Password" placeholder="Password" class="form-control" autocomplete="off" />
+                    <i id="PasswordHidden" class="fa fa-eye float-right" style="margin-top:-27px; margin-right:10px; cursor:pointer"></i>
+                    <i id="PasswordShow" class="fa fa-eye-slash float-right" style="margin-top:-27px; margin-right:10px; display:none; cursor:pointer"></i>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <label asp-for="ConfirmPassword">Confirm Password:</label>
+                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                    <input id="txtConfirmPassword" type="password" asp-for="ConfirmPassword" placeholder="Confirm Passowrd" class="form-control" autocomplete="off" />
+                    <i id="ConfirmPasswordHidden" class="fa fa-eye float-right" style="margin-top:-27px; margin-right:10px; cursor:pointer"></i>
+                    <i id="ConfirmPasswordShow" class="fa fa-eye-slash float-right" style="margin-top:-27px; margin-right:10px; display:none; cursor:pointer"></i>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12" style="text-align:center">
+                    <br />
+                    <button type="submit" class="btn btn-success btn-lg">Sign Up</button>
+                    <br /><br />
+                    <label class="text-danger text-center">@TempData["ErrorMessage"]</label>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+

@@ -1,0 +1,11 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to Sign Up Project</h1>
+    <br />
+    <p><a asp-controller="Account" asp-action="SignUp">Click here to Sign Up for SHAPE Account.</a></p>
+    <br />
+    <label class="text-success text-center">@TempData["SuccessMessage"]</label>
+</div>
