@@ -27,6 +27,7 @@ namespace SignUpTask.Controllers
 
         }
 
+        [ValidateAntiForgeryToken]
         [HttpPost]
         public IActionResult SignUp(User model)
         {
